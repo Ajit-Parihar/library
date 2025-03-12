@@ -1,0 +1,10 @@
+<%=flash[:notice]%>
+
+<%=link_to "signUp", users_new_path%>
+
+<br>
+<br>
+
+<%@books.each do |book|%>
+<%=link_to book.title, users_show_path %>
+<%end%>
