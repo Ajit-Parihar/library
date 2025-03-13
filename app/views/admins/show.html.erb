@@ -1,0 +1,15 @@
+<h1>Hii</h1>
+
+<%=@user.firstName%> <%=@user.lastName%>
+
+<br>
+<%=@user.email%>
+<br>
+
+<%@user.books.each do |book|%>
+  <%=link_to book.title, book_path(book)%>
+<%=link_to "Edit", edit_book_path(book) %>
+<%= link_to "Delete", book_path(book), method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+<br>
+<%end%>
+

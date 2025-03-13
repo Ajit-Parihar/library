@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   # root "admins#index"
   get "admin/not", to: "admins#adminNot"
   root "users#index"
+  post "login/user/check", to: "users#loginUser"
+  get "login/user", to: "users#login"
+  get "admin/allusers", to: "admins#alluser"
+  get "user/logOut", to: "users#logOut"
+  get "admin/logOut", to: "admins#logOut"
+  get "admin/logIn", to: "admins#logIn"
   resources :users
   resources :books
+  resources :usersbooks
 end

@@ -1,7 +1,11 @@
 <%=flash[:notice]%>
 
-<%=link_to "signUp", users_new_path%>
-
+ <%=link_to "signUp", users_new_path%>
+        <%=link_to "logIn", login_user_path%>   
+<br>
+<%=link_to "Admin", admin_logIn_path %>
+<br>
+<%=link_to "upload your own books", usersbooks_path %>
 <br>
 <br>
 <%@books.each do |book|%>

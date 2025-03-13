@@ -1,13 +1,7 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
-<%if admin_present%>
 
- <%else%>
-
-  <%redirect_to users_index, notice: "admin not exist please try again"%>
-  
-<%end%>
 
 <%= form_with model: @user do |form| %>
   <div >

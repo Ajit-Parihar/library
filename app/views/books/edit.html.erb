@@ -1,0 +1,22 @@
+<%=flash[:notice]%>
+
+<%= form_with model: @book do |form| %>
+  <div >
+    <%= form.label :ownnerName %>
+    <%= form.text_field :ownerName %>
+  </div>
+
+  <div >
+    <%= form.label :title %>
+    <%= form.text_field :title%>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description%>
+  </div>
+
+  <div >
+    <%= form.submit%>
+  </div>
+<% end %>

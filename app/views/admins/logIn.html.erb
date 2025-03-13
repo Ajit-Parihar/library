@@ -1,0 +1,11 @@
+ <%=flash[:notice]%>
+ 
+ <%=form_with model:@user, url:login_user_check_path do |from|%>
+ <%=from.label :email%>
+ <%=from.email_field :email%>
+ <br>
+ <%=from.label :password%>
+ <%=from.password_field :password%>
+ <br>
+ <%=from.submit%>
+ <%end%>

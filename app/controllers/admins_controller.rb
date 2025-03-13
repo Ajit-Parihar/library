@@ -4,7 +4,13 @@ class AdminsController < ApplicationController
       #   puts admin_present
       #     redirect_to admin_not_path
       # end
+      
+      @books = Book.all 
     
+  end
+
+  def alluser
+    @users = User.all
   end
 
   def new
@@ -15,11 +21,19 @@ class AdminsController < ApplicationController
      @admin = Admin.new(admin_params)
      if @admin.save
       session[:admin_id] = @admin.id
+
          redirect_to admins_path, notice: "admin create succssfully"
      end
   end
 
   def show
+      @user = User.find(params[:id])
+  end
+
+  def logOut
+    session[:admin_id] = nil
+    session[:user_id] = nil
+    redirect_to users_path, notice: "admin log out"
   end
 
   private

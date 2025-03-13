@@ -1,0 +1,11 @@
+<%=link_to "admin", new_admin_path%>
+
+<h1>Admin exist</h1>
+
+<h1>user all book index<h1>
+<br>
+<%@users.each do |user|%>
+  <%=link_to user.firstName, admin_path(user)%>
+<br>
+<%end%>
+
