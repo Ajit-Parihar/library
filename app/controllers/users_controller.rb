@@ -4,10 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    puts "jahsdkfaj"
-    puts user_present.inspect
      if user_present
-         redirect_to users_path, notice:"User login succssfully"
+        @book = Book.find(params[:id])
      else
       redirect_to users_path, notice:"please login or signup"
     end
@@ -18,20 +16,15 @@ class UsersController < ApplicationController
   end
 
   def create
-     @user = User.new(user_params)
-     puts "sd;lfjasdjf"
-     puts @user.inspect
+     @user = User.new(user_params)  
      if @user.save
-      puts "sdfna;lsdjf"
-      puts @user_id
-      session[:user_id] = @user_id
+      session[:user_id] = @user.id
+      session[:user_set_time] = Time.current
       redirect_to users_path
      else
       redirect_to users_path, notice:"fall sign in "
      end
   end
-
-
 
 private
 
@@ -39,7 +32,4 @@ def user_params
      params.require(:user).permit(:id, :firstName, :lastName, :email, :password, :password_confirmation)
 end
 
-
-
-  
 end

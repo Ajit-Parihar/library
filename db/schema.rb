@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_12_111355) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_12_163154) do
   create_table "admins", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
@@ -26,8 +26,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_12_111355) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "Admin_id", null: false
+    t.integer "user_id"
+    t.integer "Admin_id"
     t.index ["Admin_id"], name: "index_books_on_Admin_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end

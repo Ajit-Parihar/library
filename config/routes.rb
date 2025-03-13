@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "admin/not", to: "admins#adminNot"
   root "users#index"
   resources :users
+  resources :books
 end

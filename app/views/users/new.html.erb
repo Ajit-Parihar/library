@@ -1,17 +1,23 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
+<%if admin_present%>
 
+ <%else%>
+
+  <%redirect_to users_index, notice: "admin not exist please try again"%>
+  
+<%end%>
 
 <%= form_with model: @user do |form| %>
   <div >
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName %>
   </div>
 
   <div >
-    <%= form.label :Last_name %>
-    <%= form.text_field :Last_name%>
+    <%= form.label :lastName %>
+    <%= form.text_field :lastName%>
   </div>
 
   <div>
