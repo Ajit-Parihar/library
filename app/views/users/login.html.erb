@@ -1,11 +1,26 @@
- <%=flash[:notice]%>
- 
- <%=form_with model:@user, url:login_user_check_path do |from|%>
- <%=from.label :email%>
- <%=from.email_field :email%>
- <br>
- <%=from.label :password%>
- <%=from.password_field :password%>
- <br>
- <%=from.submit%>
- <%end%>
+
+ <% if flash[:notice] %>
+  <div class="flash-notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="form-container">
+  <h2>Login</h2>
+  
+  <%= form_with model: @user, url: login_user_check_path, local: true do |form| %>
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'form-input' %>
+    <br>
+
+    <%= form.label :password %>
+    <%= form.password_field :password, class: 'form-input' %>
+    <br>
+
+    <%= form.submit "Login" %>
+  <% end %>
+
+  <div class="link">
+    <%= link_to "Don't have an account? Sign up here", users_new_path %>
+  </div>
+</div>

@@ -1,21 +1,35 @@
 
-<%= form_with model: @book do |form| %>
-  <div >
-    <%= form.label :ownnerName %>
-    <%= form.text_field :ownerName %>
-  </div>
 
-  <div >
-    <%= form.label :title %>
-    <%= form.text_field :title%>
-  </div>
+<h1>Add a New Book</h1>
+<div class="add-book-container">
+  <%= form_with model: @book, local: true do |form| %>
+    <h2>Book Information</h2>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_field :description%>
-  </div>
+    <div>
+      <%= form.label :ownerName %>
+      <%= form.text_field :ownerName, class: 'form-input' %>
+    </div>
 
-  <div >
-    <%= form.submit%>
-  </div>
-<% end %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= form.label :description %>
+      <%= form.text_field :description, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= form.label :bookCover %><br><br>
+      <%= form.file_field :bookCover, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= form.submit "Add Book", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+
+

@@ -1,15 +1,1021 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* General Reset for margin and padding */
+/* Navbar Styling */
+
+  
+  
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+  }
+  
+
+
+  /* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* Items on the left and right */
+    align-items: center;  /* Align items vertically in the center */
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    background-color: #007bff;  /* Blue on hover */
+    color: #fff;
+  }
+  
+  .navbar .navbar-left, .navbar-right {
+    display: flex;
+    gap: 20px;  /* Even space between items */
+  }
+  
+  .navbar .navbar-left {
+    margin-right: auto;  /* Align left items to the left */
+  }
+  
+  .navbar .navbar-right {
+    margin-left: auto;  /* Align right items to the right */
+  }
+  
+  .navbar .profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 15px;
+  }
+  
+  /* Profile image section */
+  .profile-image-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-image-container p {
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+
+
+
+
+  
+  /* Make space for navbar */
+
+  
+  /* Profile Image Styling */
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Main Content Styling */
+  /* Main content area */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  /* Book list container */
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Individual book item */
+  /* Book item container */
+/* Book item container */
+.book-item {
+    display: flex;
+  flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;  /* Width of each book item */
+    text-align: center;  /* Center the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;  /* Space between rows */
+    display: block;  /* Stack content vertically */
+    overflow: hidden;  /* Prevent any content from spilling out */
+  }
+  
+  /* Book cover image styling */
+  .book-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;  /* Round the corners of the image */
+    margin-bottom: 15px;  /* Add space below the image */
+    object-fit: cover;  /* Ensures images scale without distortion */
+  }
+  
+  /* Book title styling */
+  .book-item a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    display: block;  /* Ensure the link occupies the whole width */
+    margin-top: 15px;  /* Space between the image and title */
+    transition: color 0.3s ease;
+  }
+  
+  /* Add hover effect on the book title */
+  .book-item a:hover {
+    color: #007bff;  /* Change the color on hover */
+  }
+  
+  
+  
+  /* Flash message Styling */
+  .flash-notice {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .flash-alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Flash message for login */
+.flash-notice {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-container input[type="email"],
+  .form-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-container input[type="email"]:focus,
+  .form-container input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Link Styling for Login/Signup */
+  .form-container .link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-container .link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .form-container .link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Form Container for SignUp */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"],
+  .form-container input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-container input[type="text"]:focus,
+  .form-container input[type="email"]:focus,
+  .form-container input[type="password"]:focus,
+  .form-container input[type="file"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-container .link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-container .link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .form-container .link a:hover {
+    text-decoration: underline;
+  }
+
+  /* User Book List */
+.user-books-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-books-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  .book-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .book-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .book-item a:hover {
+    color: #007bff;
+  }
+  
+  .book-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .book-actions a {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .book-actions a:hover {
+    background-color: #0056b3;
+  }
+  
+  .book-actions .delete {
+    background-color: #e74c3c;
+  }
+  
+  .book-actions .delete:hover {
+    background-color: #c0392b;
+  }
+  
+
+
+  /* Add Book Form */
+.add-book-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-book-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .add-book-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .add-book-container input[type="text"],
+  .add-book-container input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .add-book-container input[type="text"]:focus,
+  .add-book-container input[type="file"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .add-book-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-book-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-book-container .link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .add-book-container .link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .add-book-container .link a:hover {
+    text-decoration: underline;
+  }
+
+
+  /* Admin Section */
+.admin-container {
+    
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-container .section-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .admin-container .book-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-container .book-item img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .admin-container .book-actions a {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .admin-container .book-actions a:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-container .book-actions .delete {
+    background-color: #e74c3c;
+  }
+  
+  .admin-container .book-actions .delete:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Add Book Button */
+  .admin-container .add-book-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .admin-container .add-book-btn:hover {
+    background-color: #218838;
+  }
+  
+  .admin-container .link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .admin-container .link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .admin-container .link a:hover {
+    text-decoration: underline;
+  }
+
+  /* Login Page Styling */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .login-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .login-container input[type="email"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-container input[type="email"]:focus,
+  .login-container input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .login-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-container .link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .login-container .link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-container .link a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-container .flash-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+
+
+  /* Edit Book Page Styling */
+.edit-book-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-book-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-book-container .form-field {
+    margin-bottom: 20px;
+  }
+  
+  .edit-book-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .edit-book-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .edit-book-container input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .edit-book-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-book-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .edit-book-container .flash-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+
+  /* Admin - Show All Users Page Styling */
+.admin-users-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-users-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .admin-users-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-users-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admin-users-container li:last-child {
+    border-bottom: none;
+  }
+  
+  .admin-users-container a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+  }
+  
+  .admin-users-container a:hover {
+    text-decoration: underline;
+  }
+  
+  .admin-users-container .add-link {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .admin-users-container .add-link a {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .admin-users-container .add-link a:hover {
+    background-color: #0056b3;
+  }
+
+
+  /* New Admin Page Styling */
+.new-admin-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .new-admin-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .new-admin-container .form-field {
+    margin-bottom: 20px;
+  }
+  
+  .new-admin-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .new-admin-container input[type="text"],
+  .new-admin-container input[type="email"],
+  .new-admin-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .new-admin-container input[type="text"]:focus,
+  .new-admin-container input[type="email"]:focus,
+  .new-admin-container input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .new-admin-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .new-admin-container input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .new-admin-container .flash-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+
+
+  /* Admin - Show All Admins Page Styling */
+.admins-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admins-container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .admins-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admins-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .admins-container li:last-child {
+    border-bottom: none;
+  }
+  
+  .admins-container a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+  }
+  
+  .admins-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Admin - Particular Admin Details Page */
+  .admin-detail-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-detail-container h1 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .admin-detail-container p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .admin-detail-container .books-list {
+    margin-top: 30px;
+  }
+  
+  .admin-detail-container .books-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+  }
+  
+  .admin-detail-container .books-list a:hover {
+    text-decoration: underline;
+  }
+  
+  .admin-detail-container .books-list .book-actions {
+    margin-top: 10px;
+  }
+  
+  .admin-detail-container .books-list .book-actions a {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #dc3545;
+  }
+  
+  .admin-detail-container .books-list .book-actions a:hover {
+    color: #bd2130;
+  }
+
+
+  /* Book Details Page Styling */
+.book-detail-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-detail-container h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .book-detail-container .book-cover {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .book-detail-container .book-cover img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .book-detail-container p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .book-detail-container .no-cover {
+    font-size: 16px;
+    color: #dc3545;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .book-detail-container .book-owner {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  
+  
+  
+  

@@ -1,11 +1,23 @@
-<%=link_to "admin", new_admin_path%>
 
-<h1>Admin exist</h1>
 
-<h1>user all book index<h1>
-<br>
-<%@users.each do |user|%>
-  <%=link_to user.firstName, admin_path(user)%>
-<br>
-<%end%>
+<div class="admin-users-container">
+  <h1>Admin Dashboard</h1>
+  
+  <h1>User Books</h1>
+  
+  <div class="add-link">
+    <%= link_to "Add New Book", new_book_path %>
+  </div>
+  
+  <h2>All Users</h2>
+  
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= link_to user.firstName, admin_path(user), class: "user-link" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
 

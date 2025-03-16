@@ -1,22 +1,32 @@
-<%=flash[:notice]%>
 
-<%= form_with model: @book do |form| %>
-  <div >
-    <%= form.label :ownnerName %>
-    <%= form.text_field :ownerName %>
-  </div>
+<div class="edit-book-container">
+  
+  <h1>Edit Book</h1>
+  
+  <%= form_with model: @book do |form| %>
+    <div class="form-field">
+      <%= form.label :ownerName %>
+      <%= form.text_field :ownerName, class: "form-input" %>
+    </div>
 
-  <div >
-    <%= form.label :title %>
-    <%= form.text_field :title%>
-  </div>
+    <div class="form-field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-input" %>
+    </div>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_field :description%>
-  </div>
+    <div class="form-field">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: "form-input" %>
+    </div>
+    
+     
+        <div>
+      <%= form.label :profileImage %><br><br>
+      <%= form.file_field :profileImage, class: 'form-input' %>
+    </div>
 
-  <div >
-    <%= form.submit%>
-  </div>
-<% end %>
+    <div>
+      <%= form.submit "Save Changes", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

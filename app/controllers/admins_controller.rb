@@ -1,9 +1,8 @@
 class AdminsController < ApplicationController
   def index
-      # unless admin_present
-      #   puts admin_present
-      #     redirect_to admin_not_path
-      # end
+
+      session.delete(:user_id) 
+      session.delete(:time) 
       
       @books = Book.all 
     

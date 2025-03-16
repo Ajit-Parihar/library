@@ -1,2 +1,19 @@
-<h1><%=@book.ownerName%></h1>
-<p><%=@book.description%></p>
+
+
+
+<div class="book-detail-container">
+  <!-- Book Cover Section -->
+  <div class="book-cover">
+    <% if @book.bookCover.attached? %>
+      <%= image_tag url_for(@book.bookCover), alt: "Book Cover", class: "book-cover-img" %>
+    <% else %>
+      <p class="no-cover">No book cover image uploaded</p>
+    <% end %>
+  </div>
+
+  <!-- Book Owner Section -->
+  <h1><%= @book.ownerName %></h1>
+
+  <!-- Book Description Section -->
+  <p><%= @book.description %></p>
+</div>

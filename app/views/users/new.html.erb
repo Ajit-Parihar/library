@@ -1,35 +1,49 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
 
+<h1>Sign Up</h1>
+<p>Fill in the details to create your account</p>
 
+<%= form_with model: @user, local: true do |form| %>
+  <div class="form-container">
+    <h2>Create an Account</h2>
 
-<%= form_with model: @user do |form| %>
-  <div >
-    <%= form.label :firstName %>
-    <%= form.text_field :firstName %>
-  </div>
+    <div>
+      <%= form.label :firstName %>
+      <%= form.text_field :firstName, class: 'form-input' %>
+    </div>
 
-  <div >
-    <%= form.label :lastName %>
-    <%= form.text_field :lastName%>
-  </div>
+    <div>
+      <%= form.label :lastName %>
+      <%= form.text_field :lastName, class: 'form-input' %>
+    </div>
 
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email%>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password%>
-  </div>
+    <div>
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-input' %>
+    </div>
 
-  <div >
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+    <div>
+      <%= form.label :profileImage %><br><br>
+      <%= form.file_field :profileImage, class: 'form-input' %>
+    </div>
 
-  <div >
-    <%= form.submit "Sign Up"%>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: 'form-input' %>
+    </div>
+
+    <div>
+      <%= form.submit "Sign Up" %>
+    </div>
+
+    <div class="link">
+      <%= link_to "Already have an account? Login here", login_user_path %>
+    </div>
   </div>
 <% end %>
+
 

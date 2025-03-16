@@ -1,14 +1,24 @@
-<%=flash[:notice]%>
 
- <%=link_to "signUp", users_new_path%>
-        <%=link_to "logIn", login_user_path%>   
-<br>
-<%=link_to "Admin", admin_logIn_path %>
-<br>
-<%=link_to "upload your own books", usersbooks_path %>
-<br>
-<br>
-<%@books.each do |book|%>
-<%=link_to book.title, book_path(book)%>
-<br>
-<%end%>
+  <% if flash[:notice] %>
+  <div class="flash-notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
+<div class="main-content">
+  <div class="book-list">
+    <% @books.each do |book| %>
+      <div class="book-item">
+        <% if book.bookCover.attached? %>
+          <%= image_tag url_for(book.bookCover), alt: "Book Cover" %>
+        <% else %>
+          <p>No book cover image uploaded</p>
+        <% end %>
+        <%= link_to book.title, book_path(book) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
