@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get "user/logOut", to: "users#logOut"
   get "admin/logOut", to: "admins#logOut"
   get "admin/logIn", to: "admins#logIn"
+  get "/books/:id/delete", to: "books#delete", as: "delete_book"
+
   resources :users
   resources :books
   resources :usersbooks

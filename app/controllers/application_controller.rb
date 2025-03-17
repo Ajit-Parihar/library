@@ -9,26 +9,14 @@ class ApplicationController < ActionController::Base
 
 def admin_present
 
-      # if session[:admin_set_time] && Time.current - session[:admin_set_time] > 1.minutes
-      #   session.delete(:admin_id)      # Remove user ID from session
-      #   session.delete(:admin_set_time) # Remove the timestamp from session
-      #   flash[:alert] = "Your session has expired. Please log in again."
-      #   redirect_to users_path # Redirect user to login page
-      # end
     @admin_present ||= Admin.find(session[:admin_id]) if session[:admin_id]
   end
    helper_method :admin_present
 
 
-   
-
+  
     def user_present
-  #   if session[:user_set_time] && Time.current - session[:user_set_time] > 1.minutes
-  #     session.delete(:user_id)      # Remove user ID from session
-  #     session.delete(:user_set_time) # Remove the timestamp from session
-  #     flash[:alert] = "Your session has expired. Please log in again."
-  #     redirect_to users_path # Redirect user to login page
-  #   end
+
     @user_present ||= User.find(session[:user_id]) if session[:user_id]
  
     end
@@ -44,7 +32,7 @@ def admin_present
      puts "00000"
      puts formatted_time1-formatted_time2
     
-      if formatted_time1-formatted_time2 > 1
+      if formatted_time1-formatted_time2 > 30
         session.delete(:user_id)
         session.delete(:time)
         flash[:notice] = "your session has expired. Please log in again."
@@ -54,6 +42,5 @@ def admin_present
       return true
     end
 end
-   
    helper_method :check_session
 end

@@ -38,8 +38,10 @@ class BooksController < ApplicationController
       end
    end
 
-   def destroy
-        puts "all okey destory work"
+   def delete
+        @book = Book.find(params[:id])
+        @book.destroy
+        redirect_to usersbooks_path, notice: "delete succssfully"
    end
 
    private
